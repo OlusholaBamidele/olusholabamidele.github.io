@@ -1,0 +1,122 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef1ef;
+    color: #24272a;
+    line-height: 1.7;
+}
+
+header {
+    background-color: #626E3F;
+    color: #f2ecf9;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+h1 {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    margin: 0;
+    font-size: 38.4px;
+    letter-spacing: 0.03em;
+}
+
+.header-tagline {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #E4E2DA;
+}
+
+h2 {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    color: #626E3F;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    color: #626E3F;
+    border-bottom: 2px solid #626E3F;
+    padding-bottom: 6px;
+}
+
+.tagline-display {
+    text-align: center;
+    font-size: 22.4px;
+    color: #626E3F;
+}
+
+.color-list {
+    list-style: none;
+    padding: 0;
+}
+
+.swatch {
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.swatch p {
+    margin: 4px 0 0 0;
+}
+
+.swatch-page-bg {
+    background-color: #eef1ef;
+    color: #24272a;
+    border: 1px solid #c9d1cb;
+}
+
+.swatch-content-bg {
+    background-color: #E4E2DA;
+    color: #24272a;
+    border: 1px solid #c9c6ba;
+}
+
+.swatch-olive {
+    background-color: #626E3F;
+    color: #f2ecf9;
+}
+
+.swatch-dark-text {
+    background-color: #24272a;
+    color: #eef1ef;
+}
+
+.swatch-lavender {
+    background-color: #f2ecf9;
+    color: #24272a;
+    border: 1px solid #c9d1cb;
+}
+
+.swatch-muted {
+    background-color: #55585a;
+    color: #eef1ef;
+}
+
+.fc-body{
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+}
+
+.fc-header {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #626E3F;
+}
