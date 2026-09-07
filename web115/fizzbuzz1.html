@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olushola Bamidele's Observant Butterfly - WEB115 - FizzBuzz 1</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>FizzBuzz 1</h2>
+        <h3 id="greeting">Welcome to Eko Kitchen!</h3>
+
+        <form id="name-form">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" placeholder="Enter your first name">
+
+            <label for="middle_initial">Middle Initial:</label>
+            <input type="text" id="middle_initial" placeholder="M" maxlength="1">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" placeholder="Enter your last name">
+
+            <button type="button" onclick="showFizzBuzz()">Submit</button>
+        </form>
+
+        <ul id="output"></ul>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.js"></script>
+
+    <script>
+        // How high to count, and which numbers get a special word
+        const maxNumber = 140;
+        const firstDivisor = 3;
+        const secondDivisor = 5;
+
+        // Eko Kitchen themed words
+        const normalWord = "Yum!";
+        const firstWord = "Suya!";
+        const secondWord = "Jollof!";
+
+        // Run when the user clicks the Submit button
+        function showFizzBuzz() {
+            // Get the user's name
+            let firstName = document.getElementById("first_name").value.trim();
+            const middleInitial = document.getElementById("middle_initial").value.trim();
+            const lastName = document.getElementById("last_name").value.trim();
+
+            // Use Guest if no first name was entered
+            if (firstName === "") {
+                firstName = "Guest";
+            }
+
+            // Build the full name
+            let fullName = firstName;
+
+            // Add middle initial if entered
+            if (middleInitial !== "") {
+                fullName += " " + middleInitial + ".";
+            }
+
+            // Add last name if entered
+            if (lastName !== "") {
+                fullName += " " + lastName;
+            }
+
+            // Update the greeting
+            document.getElementById("greeting").textContent = "Welcome to Eko Kitchen, " + fullName + "!";
+
+            // Get the output area and clear old results
+            const output = document.getElementById("output");
+            output.innerHTML = "";
+
+            // Count from 1 to maxNumber
+            for (let i = 1; i <= maxNumber; i++) {
+                const divisibleByFirst = i % firstDivisor === 0;
+                const divisibleBySecond = i % secondDivisor === 0;
+
+                let word;
+                if (divisibleByFirst && divisibleBySecond) {
+                    word = firstWord + " " + secondWord;
+                } else if (divisibleByFirst) {
+                    word = firstWord;
+                } else if (divisibleBySecond) {
+                    word = secondWord;
+                } else {
+                    word = normalWord;
+                }
+
+                const listItem = document.createElement("li");
+                listItem.textContent = i + ". " + word;
+                output.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+
+</html>
