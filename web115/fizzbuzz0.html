@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olushola Bamidele's Observant Butterfly - WEB115 - FizzBuzz 0</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/profile.jpg" alt="Olushola Bamidele" class="profile-photo">
+        <h1>Olushola Bamidele's Observant Butterfly - WEB115</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="introduction.html">Introduction</a>
+            <a href="contract.html">Contract</a>
+            <a href="brand.html">Brand</a>
+            <a href="fizzbuzz0.html">FizzBuzz 0</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>FizzBuzz 0</h2>
+        <h3 id="greeting">Welcome to Eko Kitchen!</h3>
+
+        <form id="name-form">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" placeholder="Enter your first name">
+
+            <label for="middle_initial">Middle Initial:</label>
+            <input type="text" id="middle_initial" placeholder="M" maxlength="1">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" placeholder="Enter your last name">
+
+            <button type="button" onclick="showGreeting()">Submit</button>
+        </form>
+
+        <ul id="output"></ul>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="https://github.com/olusholabamidele" target="_blank">GitHub</a>
+            <a href="https://www.freecodecamp.org/olusholabamidele" target="_blank">freeCodeCamp</a>
+            <a href="https://www.codecademy.com/profiles/olusholabamidele" target="_blank">Codecademy</a>
+            <a href="https://jsfiddle.net/u/olusholabamidele/fiddles/" target="_blank">JSFiddle</a>
+            <a href="https://www.linkedin.com/learning/?u=76141674" target="_blank">LinkedIn Learning</a>
+        </nav>
+        <p>Page built by Olushola Bamidele</p>
+        <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
+    </footer>
+
+    <script>
+        // Theme words to cycle through for each line of output
+        const themeWords = [
+            "Jollof Joy",
+            "Suya Sizzle",
+            "Egusi Excellence",
+            "Plantain Power",
+            "Puff Puff",
+            "Chin Chin",
+            "Moin Moin",
+            "Akara Adventure",
+            "Pepper Soup",
+            "Dodo Delight",
+            "Amala Artistry",
+            "Ofada Origins",
+            "Efo Riro",
+            "Zobo Zest",
+            "Fufu Fiesta"
+        ];
+
+        // Run when the user clicks the Submit button
+        function showGreeting() {
+            // Get the user's name
+            let firstName = document.getElementById("first_name").value.trim();
+            const middleInitial = document.getElementById("middle_initial").value.trim();
+            const lastName = document.getElementById("last_name").value.trim();
+
+            // Use Guest if no first name was entered
+            if (firstName === "") {
+                firstName = "Guest";
+            }
+
+            // Build the full name
+            let fullName = firstName;
+
+            // Add middle initial if entered
+            if (middleInitial !== "") {
+                fullName += " " + middleInitial + ".";
+            }
+
+            // Add last name if entered
+            if (lastName !== "") {
+                fullName += " " + lastName;
+            }
+
+            // Update the greeting
+            document.getElementById("greeting").textContent = "Welcome to Eko Kitchen, " + fullName + "!";
+
+            // Ask how high to count
+            let limit = prompt("How high do you want to count, " + firstName + "?");
+            limit = Number(limit);
+
+            // Get the output area and clear old results
+            const output = document.getElementById("output");
+            output.innerHTML = "";
+
+            // Handle missing or invalid input
+            if (!limit || limit < 1) {
+                output.innerHTML = "<li>Please enter a valid number above 0.</li>";
+                return;
+            }
+
+            // Count from 1 to the number the user chose
+            for (let i = 1; i <= limit; i++) {
+                const words = themeWords[(i - 1) % themeWords.length];
+                const parity = i % 2 === 0 ? "even" : "odd";
+
+                const listItem = document.createElement("li");
+                listItem.textContent = i + ") " + words + " - the number is " + parity;
+                output.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+
+</html>
