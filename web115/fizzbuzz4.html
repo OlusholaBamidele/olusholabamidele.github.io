@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olushola Bamidele's Observant Butterfly - WEB115 - FizzBuzz 4</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>FizzBuzz 4</h2>
+        <h3 id="greeting">Welcome to Eko Kitchen!</h3>
+
+        <form id="name-form">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" placeholder="Enter your first name">
+
+            <label for="middle_initial">Middle Initial:</label>
+            <input type="text" id="middle_initial" placeholder="M" maxlength="1">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" placeholder="Enter your last name">
+
+            <p class="form-instructions">
+                Customize your FizzBuzz below. Each divisor gets one word - if a number
+                is divisible by more than one, its words are combined. Leave "Default Word"
+                blank if you want numbers that match nothing to show up empty.
+            </p>
+
+            <label for="total">Count Up To:</label>
+            <input type="number" id="total" value="125">
+
+            <label for="divisor1">Divisor 1:</label>
+            <input type="number" id="divisor1" value="3">
+            <label for="word1">Word for Divisor 1:</label>
+            <input type="text" id="word1" value="Suya!">
+
+            <label for="divisor2">Divisor 2:</label>
+            <input type="number" id="divisor2" value="5">
+            <label for="word2">Word for Divisor 2:</label>
+            <input type="text" id="word2" value="Jollof!">
+
+            <label for="divisor3">Divisor 3:</label>
+            <input type="number" id="divisor3" value="7">
+            <label for="word3">Word for Divisor 3:</label>
+            <input type="text" id="word3" value="Bang!">
+
+            <label for="defaultWord">Default Word (for numbers that match nothing):</label>
+            <input type="text" id="defaultWord" value="" placeholder="Leave blank for nothing">
+
+            <button type="button" onclick="showFizzBuzz()">Submit</button>
+        </form>
+
+        <ul id="output"></ul>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.js"></script>
+
+    <script>
+        // Returns true if number is evenly divisible by divisor
+        function checkDivision(number, divisor) {
+            return number % divisor === 0;
+        }
+
+        // Run when the user clicks the Submit button
+        function showFizzBuzz() {
+            // Get the user's name
+            let firstName = document.getElementById("first_name").value.trim();
+            const middleInitial = document.getElementById("middle_initial").value.trim();
+            const lastName = document.getElementById("last_name").value.trim();
+
+            // Use Guest if no first name was entered
+            if (firstName === "") {
+                firstName = "Guest";
+            }
+
+            // Build the full name
+            let fullName = firstName;
+
+            // Add middle initial if entered
+            if (middleInitial !== "") {
+                fullName += " " + middleInitial + ".";
+            }
+
+            // Add last name if entered
+            if (lastName !== "") {
+                fullName += " " + lastName;
+            }
+
+            // Update the greeting
+            document.getElementById("greeting").textContent = "Welcome to Eko Kitchen, " + fullName + "!";
+
+            // Get the FizzBuzz settings the user typed in
+            const total = Number(document.getElementById("total").value);
+            const defaultWord = document.getElementById("defaultWord").value.trim();
+
+            // Each divisor and the word it adds. Add more { divisor, word } pairs
+            // here without touching the loop below.
+            const fizzWords = [
+                { divisor: Number(document.getElementById("divisor1").value), word: document.getElementById("word1").value.trim() },
+                { divisor: Number(document.getElementById("divisor2").value), word: document.getElementById("word2").value.trim() },
+                { divisor: Number(document.getElementById("divisor3").value), word: document.getElementById("word3").value.trim() }
+            ];
+
+            // Get the output area and clear old results
+            const output = document.getElementById("output");
+            output.innerHTML = "";
+
+            // Count from 1 to total
+            for (let iCounter = 1; iCounter <= total; iCounter++) {
+                // Check every divisor and collect the matching words
+                const matches = [];
+                for (let j = 0; j < fizzWords.length; j++) {
+                    if (checkDivision(iCounter, fizzWords[j].divisor)) {
+                        matches.push(fizzWords[j].word);
+                    }
+                }
+
+                // If no divisor matched, use the default word instead (can be blank)
+                const word = matches.length > 0 ? matches.join(", ") : defaultWord;
+
+                const listItem = document.createElement("li");
+                listItem.textContent = iCounter + ". " + word;
+                output.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+
+</html>

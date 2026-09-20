@@ -132,6 +132,12 @@ footer p {
     background-color: #4d5731;
 }
 
+.form-instructions {
+    font-size: 13px;
+    color: #55585A;
+    margin: 4px 0;
+}
+
 #output {
     max-width: 500px;
     margin: 0 auto;
