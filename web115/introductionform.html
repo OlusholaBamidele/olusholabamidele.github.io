@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <title>Olushola Bamidele's Observant Butterfly - WEB115 - Introduction Form</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+
+    <main>
+        <h2>Introduction Form</h2>
+        <p>
+            Edit any of the fields below (including adding or removing courses) and click Submit -
+            the output underneath will update to match, in the same format as the
+            <a href="introduction.html">Introduction</a> page.
+        </p>
+
+        <form id="intro-form">
+            <label for="greeting">Greeting</label>
+            <input type="text" id="greeting" required
+                value="Hey, I'm Mo! A quick rundown on who I am and what brought me here:">
+
+            <label for="background">My Background</label>
+            <textarea id="background" required>I studied Sociology and International Business, and these days I'm working on pivoting into IT and technology.</textarea>
+
+            <label for="about-me">A Little About Me</label>
+            <textarea id="about-me" required>I have a creative and entrepreneurial streak - nail art and content creation are big passions of mine, and I love turning ideas into actual designs. Business, branding, and e-commerce interest me too; I like taking something from a rough concept to a finished product people can actually use.</textarea>
+
+            <label for="future-goals">Future Goals</label>
+            <textarea id="future-goals" required rows="8">My ultimate goal is entrepreneurship. I want to build businesses that allow me to combine my creativity, business knowledge, and growing technology skills. I already enjoy taking ideas and turning them into something tangible, whether that means building a brand, creating a product, or finding a better way to solve a problem.
+
+As I grow, I want to become a serial entrepreneur, building and scaling businesses across different industries rather than limiting myself to one path. For me, learning technology is another tool that gives me the ability to create, innovate, automate, and bring more of my ideas to life.
+
+Ultimately, I want to build things that are profitable, sustainable, and genuinely useful, while creating the freedom to keep exploring new ideas and opportunities.</textarea>
+
+            <label for="coding-experience">My Coding Experience and Why I Chose WEB115</label>
+            <textarea id="coding-experience" required rows="6">I have some basic web design experience from a previous course, where I learned some of the fundamentals of creating and designing websites. Although I still have a lot to learn, that experience gave me a good starting point and made me more comfortable with web development.
+
+I am taking WEB115 because it is a required course for my program, but I also see it as an opportunity to strengthen my existing skills, learn new techniques, and become more confident in creating professional and functional websites.</textarea>
+
+            <fieldset id="courses-fieldset">
+                <legend>This Semester's Courses</legend>
+                <p id="course-format-hint" class="form-instructions">
+                    Format: CODE### - Course Name (e.g. CIS110 - Introduction to Computers)
+                </p>
+                <div id="courses-container">
+                    <div class="course-row">
+                        <label class="visually-hidden" for="course-1">Course 1</label>
+                        <input type="text" id="course-1" class="course-input" required
+                            aria-describedby="course-format-hint"
+                            value="CIS110 - Introduction to Computers">
+                        <button type="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+                    </div>
+                    <div class="course-row">
+                        <label class="visually-hidden" for="course-2">Course 2</label>
+                        <input type="text" id="course-2" class="course-input" required
+                            aria-describedby="course-format-hint"
+                            value="CSC151 - JAVA Programming">
+                        <button type="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+                    </div>
+                    <div class="course-row">
+                        <label class="visually-hidden" for="course-3">Course 3</label>
+                        <input type="text" id="course-3" class="course-input" required
+                            aria-describedby="course-format-hint"
+                            value="DBA120 - Database Programming">
+                        <button type="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+                    </div>
+                    <div class="course-row">
+                        <label class="visually-hidden" for="course-4">Course 4</label>
+                        <input type="text" id="course-4" class="course-input" required
+                            aria-describedby="course-format-hint"
+                            value="WEB115 - Web Markup and Scripting">
+                        <button type="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+                    </div>
+                </div>
+                <button type="button" id="add-course" onclick="addCourse()">+ Add Course</button>
+            </fieldset>
+
+            <label for="not-studying">When I'm Not Studying</label>
+            <textarea id="not-studying" required>I'm a naturally curious person - crime documentaries and random internet rabbit holes are basically my hobby. I'll go looking for one thing online and end up learning about five unrelated topics instead.</textarea>
+
+            <button type="button" id="submit-form" onclick="updateIntroduction()">Submit</button>
+        </form>
+
+        <div id="intro-output" aria-live="polite" aria-atomic="true"></div>
+    </main>
+
+    <div data-include="components/footer.html"></div>
+
+    <script src="scripts/HTMLInclude.js"></script>
+
+    <script>
+        // Add a new blank course row
+        function addCourse() {
+            const coursesContainer = document.getElementById("courses-container");
+            const courseNumber = coursesContainer.querySelectorAll(".course-input").length + 1;
+            const inputId = "course-" + courseNumber;
+
+            const row = document.createElement("div");
+            row.className = "course-row";
+            row.innerHTML =
+                '<label class="visually-hidden" for="' + inputId + '">Course ' + courseNumber + '</label>' +
+                '<input type="text" id="' + inputId + '" class="course-input" required ' +
+                'aria-describedby="course-format-hint" ' +
+                'placeholder="e.g. WEB115 - Web Markup and Scripting">' +
+                '<button type="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>';
+
+            coursesContainer.appendChild(row);
+        }
+
+        // Remove the course row this button belongs to
+        function removeCourse(button) {
+            button.parentElement.remove();
+        }
+
+        // Turn text with blank-line-separated paragraphs into <p> elements
+        function buildParagraphs(text) {
+            const paragraphs = text.split("\n\n");
+            let html = "";
+
+            for (let i = 0; i < paragraphs.length; i++) {
+                const trimmed = paragraphs[i].trim();
+                if (trimmed !== "") {
+                    html += "<p>" + trimmed + "</p>";
+                }
+            }
+
+            return html;
+        }
+
+        // Run when the user clicks the Submit button
+        function updateIntroduction() {
+            // Let the browser check required fields, patterns, etc. first
+            const form = document.getElementById("intro-form");
+            if (!form.reportValidity()) {
+                return;
+            }
+
+            // Get the values the user typed in
+            const greeting = document.getElementById("greeting").value.trim();
+            const background = document.getElementById("background").value.trim();
+            const aboutMe = document.getElementById("about-me").value.trim();
+            const futureGoals = document.getElementById("future-goals").value.trim();
+            const codingExperience = document.getElementById("coding-experience").value.trim();
+            const notStudying = document.getElementById("not-studying").value.trim();
+
+            // Build the courses list from however many course rows are left
+            const courseInputs = document.querySelectorAll(".course-input");
+            let coursesHTML = "<ol>";
+            for (let i = 0; i < courseInputs.length; i++) {
+                const value = courseInputs[i].value.trim();
+                if (value !== "") {
+                    coursesHTML += "<li>" + value + "</li>";
+                }
+            }
+            coursesHTML += "</ol>";
+
+            // Rebuild the output to match the Introduction page's format
+            const output = document.getElementById("intro-output");
+            output.innerHTML =
+                "<p>" + greeting + "</p>" +
+                "<ul>" +
+                "<li><strong>My Background:</strong>" + buildParagraphs(background) + "</li>" +
+                "<li><strong>A Little About Me:</strong>" + buildParagraphs(aboutMe) + "</li>" +
+                "<li><strong>Future Goals:</strong>" + buildParagraphs(futureGoals) + "</li>" +
+                "<li><strong>My Coding Experience and Why I Chose WEB115:</strong>" + buildParagraphs(codingExperience) + "</li>" +
+                "<li><strong>This Semester's Courses:</strong>" + coursesHTML + "</li>" +
+                "<li><strong>When I'm Not Studying:</strong>" + buildParagraphs(notStudying) + "</li>" +
+                "</ul>";
+        }
+    </script>
+</body>
+
+</html>
