@@ -105,6 +105,16 @@ footer p {
     color: #55585A;
 }
 
+footer p a {
+    color: #626E3F;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
 #greeting {
     text-align: center;
 }
