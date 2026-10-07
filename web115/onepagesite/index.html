@@ -1,168 +1,815 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+
 <head>
-	<meta class="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Evie by unDraw</title>
-	<!-- Don't forget to add your metadata here -->
-	<link rel='stylesheet' href='styles/style.min.css' />
+	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+	<title>Olushola Bamidele's Observant Butterfly - WEB115 - One Page Site</title>
+	<link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-	<!-- Hero(extended) navbar -->
-	<div class="navbar navbar--extended">
-		<nav class="nav__mobile"></nav>
+	<!-- Navbar -->
+	<div class="navbar navbar-extended">
 		<div class="container">
 			<div class="navbar__inner">
-				<a href="index.html" class="navbar__logo">Logo</a>
+				<a href="#home" class="navbar__logo">
+					<img src="images/logo.svg" alt="" class="navbar__logo-img">
+					<span>Eko Kitchen</span>
+				</a>
 				<nav class="navbar__menu">
 					<ul>
-						<li><a href="#">Option</a></li>
-						<li><a href="#">Option 2</a></li>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#introduction">Introduction</a></li>
+						<li><a href="#introduction-form">Introduction Form</a></li>
+						<li><a href="#contract">Contract</a></li>
+						<li><a href="#brand">Brand</a></li>
+						<li><a href="#fizzbuzz">FizzBuzz</a></li>
 					</ul>
 				</nav>
-				<div class="navbar__menu-mob"><a href="" id='toggle'><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg></a></div>
+				<div class="navbar__menu-mob"><a href="" id="toggle" aria-label="Menu"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></a></div>
 			</div>
 		</div>
+		<nav class="nav__mobile"></nav>
 	</div>
-	<!-- Hero unit -->
-	<div class="hero">
-		<div class="hero__overlay hero__overlay--gradient"></div>
-		<div class="hero__mask"></div>
+
+	<!-- Home -->
+	<div class="hero" id="home">
+		<div class="hero__overlay hero__overlay-gradient"></div>
 		<div class="hero__inner">
 			<div class="container">
 				<div class="hero__content">
-					<div class="hero__content__inner" id='navConverter'>
-						<h1 class="hero__title">A production-ready theme for your projects</h1>
-						<p class="hero__text">Evie is an MIT licensed template bundled with a minimal style guide to build websites faster. It is extemely lightweight, customizable and works perfectly on modern browsers.</p>
-						<a href="#" class="button button__accent">Download Evie</a>
-						<a href="#" class="button hero__button">Learn more</a>
+					<div class="hero__content__inner" id="navConverter">
+						<img src="images/profile.jpg" alt="Olushola Bamidele" class="profile-photo">
+						<p class="hero__site-title">Olushola Bamidele's Observant Butterfly - WEB115</p>
+						<h1 class="hero__title">Eko Kitchen</h1>
+						<p class="hero__tagline"><em>"Taste of Lagos - Heart of Nigeria"</em></p>
+						<p class="hero__text">
+							Hi, I'm Mo - thanks for stopping by! This site is where I'll be
+							building out my coursework for WEB115 as I work through the semester.
+						</p>
+						<p class="hero__text">
+							Take a look around using the menu above. My introduction and course
+							contract are linked there, and I'll keep adding to this space as the
+							course goes on.
+						</p>
+						<a href="#introduction" class="button button__accent">Meet Mo</a>
+						<a href="#brand" class="button hero__button">See the Brand</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="hero__sub">
-		<span id="scrollToNext" class="scroll">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class='hero__sub__down' fill="currentColor" width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z"/></svg>
-		</span>
-	</div>
-	<!-- Steps -->
-	<div class="steps landing__section">
-		<div class="container">
-			<h2>Who can use Evie?</h2>
-			<p>Here's who we can think of, but surely creative people will surprise us.</p>
-		</div>
-		<div class="container">
-			<div class="steps__inner">
-				<div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_designer.svg" class="step__image">
-					</div>
-					<h4>Programmers</h4>
-					<p class="step__text">A landing page for your open source projects. Present your solution, easily create docs.</p>
-				</div>
-				<div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_responsive.svg" class="step__image">
-					</div>
-					<h4>Designers</h4>
-					<p class="step__text">A website for your own freebies. Let the world download and use your artwork.</p>
-				</div>
-				<div class="step">
-					<div class="step__media">
-						<img src="./images/undraw_creation.svg" class="step__image">
-					</div>
-					<h4>Makers</h4>
-					<p class="step__text">A great starting point for your web application. Focus on your idea and execution.</p>
-				</div>
+
+	<main>
+		<!-- Introduction -->
+		<section id="introduction" class="landing__section">
+			<div class="container text-container text-container-center">
+				<h2>Introduction</h2>
+				<p>Hey, I'm Mo! A quick rundown on who I am and what brought me here:</p>
+				<ul class="intro-list">
+					<li>
+						<strong>My Background:</strong>
+						<p>
+							I studied Sociology and International Business, and these days I'm
+							working on pivoting into IT and technology.
+						</p>
+					</li>
+					<li>
+						<strong>A Little About Me:</strong>
+						<p>
+							I have a creative and entrepreneurial streak - nail art and content
+							creation are big passions of mine, and I love turning ideas into actual
+							designs. Business, branding, and e-commerce interest me too; I like taking
+							something from a rough concept to a finished product people can actually use.
+						</p>
+					</li>
+					<li>
+						<strong>Future Goals:</strong>
+						<p>
+							My ultimate goal is entrepreneurship. I want to build businesses that allow
+							me to combine my creativity, business knowledge, and growing technology skills.
+							I already enjoy taking ideas and turning them into something tangible, whether
+							that means building a brand, creating a product, or finding a better way to
+							solve a problem.
+						</p>
+						<p>
+							As I grow, I want to become a serial entrepreneur, building and scaling
+							businesses across different industries rather than limiting myself to one path.
+							For me, learning technology is another tool that gives me the ability to create,
+							innovate, automate, and bring more of my ideas to life.
+						</p>
+						<p>
+							Ultimately, I want to build things that are profitable, sustainable, and
+							genuinely useful, while creating the freedom to keep exploring new ideas
+							and opportunities.
+						</p>
+					</li>
+					<li>
+						<strong>My Coding Experience and Why I Chose WEB115:</strong>
+						<p>
+							I have some basic web design experience from a previous course, where I
+							learned some of the fundamentals of creating and designing websites.
+							Although I still have a lot to learn, that experience gave me a good
+							starting point and made me more comfortable with web development.
+						</p>
+						<p>
+							I am taking WEB115 because it is a required course for my program, but I
+							also see it as an opportunity to strengthen my existing skills, learn new
+							techniques, and become more confident in creating professional and
+							functional websites.
+						</p>
+					</li>
+					<li>
+						<strong>This Semester's Courses:</strong>
+						<ol>
+							<li>CIS110 - Introduction to Computers</li>
+							<li>CSC151 - JAVA Programming</li>
+							<li>DBA120 - Database Programming</li>
+							<li>WEB115 - Web Markup and Scripting</li>
+						</ol>
+					</li>
+					<li>
+						<strong>When I'm Not Studying:</strong>
+						<p>
+							I'm a naturally curious person - crime documentaries and random internet
+							rabbit holes are basically my hobby. I'll go looking for one thing online
+							and end up learning about five unrelated topics instead.
+						</p>
+					</li>
+				</ul>
 			</div>
-		</div>
-	</div>
-	<!-- Expanded sections -->
-	<div class="expanded landing__section">
-		<div class="container">
-			<div class="expanded__inner">
-				<div class="expanded__media">
-					<img src="./images/undraw_browser.svg" class="expanded__image">
-				</div>
-				<div class="expanded__content">
-					<h2 class="expanded__title">Natural styling with almost nothing to learn</h2>
-					<p class="expanded__text">Evie brings you the pages you'll need and the structure to create your own, without a learning curve. It is minimal and mostly styles plain elements. There are only a few classes you'll need to know but nothing to disrupt your preferred coding style.</p>
-				</div>
+		</section>
+
+		<!-- Introduction Form -->
+		<section id="introduction-form" class="landing__section landing__section-alt">
+			<div class="container text-container text-container-center">
+				<h2>Introduction Form</h2>
+				<p>
+					Edit any of the fields below (including adding or removing courses) and click Submit -
+					the output underneath will update to match, in the same format as the
+					<a href="#introduction">Introduction</a> section.
+				</p>
+
+				<form id="intro-form" class="site-form">
+					<label for="greeting">Greeting</label>
+					<input type="text" id="greeting" required
+						value="Hey, I'm Mo! A quick rundown on who I am and what brought me here:">
+
+					<label for="background">My Background</label>
+					<textarea id="background" required>I studied Sociology and International Business, and these days I'm working on pivoting into IT and technology.</textarea>
+
+					<label for="about-me">A Little About Me</label>
+					<textarea id="about-me" required>I have a creative and entrepreneurial streak - nail art and content creation are big passions of mine, and I love turning ideas into actual designs. Business, branding, and e-commerce interest me too; I like taking something from a rough concept to a finished product people can actually use.</textarea>
+
+					<label for="future-goals">Future Goals</label>
+					<textarea id="future-goals" required rows="8">My ultimate goal is entrepreneurship. I want to build businesses that allow me to combine my creativity, business knowledge, and growing technology skills. I already enjoy taking ideas and turning them into something tangible, whether that means building a brand, creating a product, or finding a better way to solve a problem.
+
+As I grow, I want to become a serial entrepreneur, building and scaling businesses across different industries rather than limiting myself to one path. For me, learning technology is another tool that gives me the ability to create, innovate, automate, and bring more of my ideas to life.
+
+Ultimately, I want to build things that are profitable, sustainable, and genuinely useful, while creating the freedom to keep exploring new ideas and opportunities.</textarea>
+
+					<label for="coding-experience">My Coding Experience and Why I Chose WEB115</label>
+					<textarea id="coding-experience" required rows="6">I have some basic web design experience from a previous course, where I learned some of the fundamentals of creating and designing websites. Although I still have a lot to learn, that experience gave me a good starting point and made me more comfortable with web development.
+
+I am taking WEB115 because it is a required course for my program, but I also see it as an opportunity to strengthen my existing skills, learn new techniques, and become more confident in creating professional and functional websites.</textarea>
+
+					<fieldset id="courses-fieldset">
+						<legend>This Semester's Courses</legend>
+						<p id="course-format-hint" class="form-instructions">
+							Format: CODE### - Course Name (e.g. CIS110 - Introduction to Computers)
+						</p>
+						<div id="courses-container">
+							<div class="course-row">
+								<label class="visually-hidden" for="course-1">Course 1</label>
+								<input type="text" id="course-1" class="course-input" required
+									aria-describedby="course-format-hint"
+									value="CIS110 - Introduction to Computers">
+								<button type="button" class="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+							</div>
+							<div class="course-row">
+								<label class="visually-hidden" for="course-2">Course 2</label>
+								<input type="text" id="course-2" class="course-input" required
+									aria-describedby="course-format-hint"
+									value="CSC151 - JAVA Programming">
+								<button type="button" class="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+							</div>
+							<div class="course-row">
+								<label class="visually-hidden" for="course-3">Course 3</label>
+								<input type="text" id="course-3" class="course-input" required
+									aria-describedby="course-format-hint"
+									value="DBA120 - Database Programming">
+								<button type="button" class="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+							</div>
+							<div class="course-row">
+								<label class="visually-hidden" for="course-4">Course 4</label>
+								<input type="text" id="course-4" class="course-input" required
+									aria-describedby="course-format-hint"
+									value="WEB115 - Web Markup and Scripting">
+								<button type="button" class="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>
+							</div>
+						</div>
+						<button type="button" id="add-course" class="button" onclick="addCourse()">+ Add Course</button>
+					</fieldset>
+
+					<label for="not-studying">When I'm Not Studying</label>
+					<textarea id="not-studying" required>I'm a naturally curious person - crime documentaries and random internet rabbit holes are basically my hobby. I'll go looking for one thing online and end up learning about five unrelated topics instead.</textarea>
+
+					<button type="button" class="button button__primary" onclick="updateIntroduction()">Submit</button>
+				</form>
+
+				<div id="intro-output" aria-live="polite" aria-atomic="true"></div>
 			</div>
-		</div>
-	</div>
-	<div class="expanded landing__section">
-		<div class="container">
-			<div class="expanded__inner">
-				<div class="expanded__media">
-					<img src="./images/undraw_frameworks.svg" class="expanded__image">
-				</div>
-				<div class="expanded__content">
-					<h2 class="expanded__title">Framework agnostic. Your front-end setup, your choice.</h2>
-					<p class="expanded__text">Evie has zero dependencies and uses vanilla JavaScript for a few functions with minimal footprint. You can use React, Vue, Angular, jQuery or whatever you prefer.</p>
-				</div>
+		</section>
+
+		<!-- Contract -->
+		<section id="contract" class="landing__section">
+			<div class="container text-container text-container-center">
+				<h2>Contract</h2>
+				<p>
+					I, <a href="#introduction">Olushola Bamidele</a>, agree to abide by the
+					terms in my Fall 2026 WEB115-N850 Web Markup and Scripting with my instructor,
+					Aastha Saxena.
+				</p>
+				<p>
+					I understand that all work that I do on my school and personal websites will be
+					publicly available to the world. I will not put information there that is
+					inappropriate for schoolwork, or that I wish to keep private.
+				</p>
+				<p>
+					I also understand that it is my work that counts for attendance, not logins or
+					showing up for class. As such, failure to turn in assignments may show as absences.
+				</p>
+				<p>
+					<strong>Signed: Olushola Bamidele, 23 August 2026</strong>
+				</p>
 			</div>
-		</div>
-	</div>
-	<div class="expanded landing__section">
-		<div class="container">
-			<div class="expanded__inner">
-				<div class="expanded__media">
-					<img src="./images/together.svg" class="expanded__image">
-				</div>
-				<div class="expanded__content">
-					<h2 class="expanded__title">Ready for production or rapid prototyping</h2>
-					<p class="expanded__text">Landing, authentication and a few other pages to select from, despite the small size. Tested on production at unDraw with amazing speeds and unopinionated on how to structure your project. We really hope you'll find it awesome and useful!</p>
-				</div>
+		</section>
+
+		<!-- Brand -->
+		<section id="brand" class="landing__section landing__section-alt">
+			<div class="container text-container text-container-center">
+				<h2>Brand Guide</h2>
+
+				<h3>Our Mission</h3>
+				<p>
+					Experience Authentic Nigerian Cuisine - from the smoky warmth of
+					suya to the rich depth of egusi soup, every dish at Eko Kitchen
+					is a celebration of Lagos' bold, vibrant flavors.
+				</p>
+
+				<h3>Tagline</h3>
+				<p class="tagline-display">
+					<strong>
+						<em>"Taste of Lagos - Heart of Nigeria"</em>
+					</strong>
+				</p>
+
+				<h3>Color Scheme</h3>
+				<ul class="color-list">
+					<li class="swatch swatch-page-bg">
+						<strong>Off-White - #eef1ef</strong>
+						<p>Used for: page background</p>
+					</li>
+					<li class="swatch swatch-content-bg">
+						<strong>Beige - #E4E2DA</strong>
+						<p>Used for: main content background</p>
+					</li>
+					<li class="swatch swatch-olive">
+						<strong>Olive Green - #626E3F</strong>
+						<p>Used for: header background, navigation, and accents</p>
+					</li>
+					<li class="swatch swatch-dark-text">
+						<strong>Dark Gray - #24272a</strong>
+						<p>Used for: body text</p>
+					</li>
+					<li class="swatch swatch-lavender">
+						<strong>Light Lavender - #f2ecf9</strong>
+						<p>Used for: navigation text on the olive background</p>
+					</li>
+					<li class="swatch swatch-muted">
+						<strong>Muted Gray - #55585a</strong>
+						<p>Used for: secondary/footer text</p>
+					</li>
+				</ul>
+
+				<h3>Font Choice</h3>
+				<ul>
+					<li>
+						<p class="fc-body">Segoe UI - used for body text</p>
+					</li>
+					<li>
+						<p class="fc-header">Trebuchet MS - used for headings</p>
+					</li>
+				</ul>
+
+				<h3>Logo</h3>
+				<img src="images/logo.svg" alt="Eko Kitchen logo: a cooking pot with rising steam" class="brand-logo-display">
+				<p>
+					A stylized cooking pot with rising steam, drawn in Olive Green to match
+					the rest of the palette.
+				</p>
+
+				<h3>Favicon</h3>
+				<img src="images/favicon.svg" alt="Eko Kitchen logo: a cooking pot with rising steam" class="brand-favicon-display">
+				<p>
+					The same logo, shown here at the small size is used as our favicon.
+				</p>
 			</div>
-		</div>
-	</div>
-	<!-- Call To Action -->
-	<div class="cta cta--reverse">
-		<div class="container">
-			<div class="cta__inner">
-				<h2 class="cta__title">Get started now</h2>
-				<p class="cta__sub cta__sub--center">Grab the production version and begin your project instantly.</p>
-				<a href="#" class="button button__accent">Download Evie</a>
+		</section>
+
+		<!-- FizzBuzz -->
+		<section id="fizzbuzz" class="landing__section">
+			<div class="container text-container text-container-center">
+				<h2>FizzBuzz</h2>
+				<p>
+					Five versions of the Eko Kitchen FizzBuzz, from a simple counter up to a fully
+					customizable one. Enter a name and press Submit on any of them to run it.
+				</p>
+
+				<!-- FizzBuzz 0 -->
+				<article class="fizz-card">
+					<h3>FizzBuzz 0</h3>
+					<h4 id="fb0-greeting" class="fizz-greeting">Welcome to Eko Kitchen!</h4>
+					<form class="site-form">
+						<label for="fb0-first-name">First Name:</label>
+						<input type="text" id="fb0-first-name" placeholder="Enter your first name">
+
+						<label for="fb0-middle-initial">Middle Initial:</label>
+						<input type="text" id="fb0-middle-initial" placeholder="M" maxlength="1">
+
+						<label for="fb0-last-name">Last Name:</label>
+						<input type="text" id="fb0-last-name" placeholder="Enter your last name">
+
+						<button type="button" class="button button__primary" onclick="showFizzBuzz0()">Submit</button>
+					</form>
+					<div class="fizz-scroll" role="region" aria-label="FizzBuzz 0 results" tabindex="0"><ul id="fb0-output" class="fizz-output"></ul></div>
+				</article>
+
+				<!-- FizzBuzz 1 -->
+				<article class="fizz-card">
+					<h3>FizzBuzz 1</h3>
+					<h4 id="fb1-greeting" class="fizz-greeting">Welcome to Eko Kitchen!</h4>
+					<form class="site-form">
+						<label for="fb1-first-name">First Name:</label>
+						<input type="text" id="fb1-first-name" placeholder="Enter your first name">
+
+						<label for="fb1-middle-initial">Middle Initial:</label>
+						<input type="text" id="fb1-middle-initial" placeholder="M" maxlength="1">
+
+						<label for="fb1-last-name">Last Name:</label>
+						<input type="text" id="fb1-last-name" placeholder="Enter your last name">
+
+						<button type="button" class="button button__primary" onclick="showFizzBuzz1()">Submit</button>
+					</form>
+					<div class="fizz-scroll" role="region" aria-label="FizzBuzz 1 results" tabindex="0"><ul id="fb1-output" class="fizz-output"></ul></div>
+				</article>
+
+				<!-- FizzBuzz 2 -->
+				<article class="fizz-card">
+					<h3>FizzBuzz 2</h3>
+					<h4 id="fb2-greeting" class="fizz-greeting">Welcome to Eko Kitchen!</h4>
+					<form class="site-form">
+						<label for="fb2-first-name">First Name:</label>
+						<input type="text" id="fb2-first-name" placeholder="Enter your first name">
+
+						<label for="fb2-middle-initial">Middle Initial:</label>
+						<input type="text" id="fb2-middle-initial" placeholder="M" maxlength="1">
+
+						<label for="fb2-last-name">Last Name:</label>
+						<input type="text" id="fb2-last-name" placeholder="Enter your last name">
+
+						<button type="button" class="button button__primary" onclick="showFizzBuzz2()">Submit</button>
+					</form>
+					<div class="fizz-scroll" role="region" aria-label="FizzBuzz 2 results" tabindex="0"><ul id="fb2-output" class="fizz-output"></ul></div>
+				</article>
+
+				<!-- FizzBuzz 3 -->
+				<article class="fizz-card">
+					<h3>FizzBuzz 3</h3>
+					<h4 id="fb3-greeting" class="fizz-greeting">Welcome to Eko Kitchen!</h4>
+					<form class="site-form">
+						<label for="fb3-first-name">First Name:</label>
+						<input type="text" id="fb3-first-name" placeholder="Enter your first name">
+
+						<label for="fb3-middle-initial">Middle Initial:</label>
+						<input type="text" id="fb3-middle-initial" placeholder="M" maxlength="1">
+
+						<label for="fb3-last-name">Last Name:</label>
+						<input type="text" id="fb3-last-name" placeholder="Enter your last name">
+
+						<button type="button" class="button button__primary" onclick="showFizzBuzz3()">Submit</button>
+					</form>
+					<div class="fizz-scroll" role="region" aria-label="FizzBuzz 3 results" tabindex="0"><ul id="fb3-output" class="fizz-output"></ul></div>
+				</article>
+
+				<!-- FizzBuzz 4 -->
+				<article class="fizz-card">
+					<h3>FizzBuzz 4</h3>
+					<h4 id="fb4-greeting" class="fizz-greeting">Welcome to Eko Kitchen!</h4>
+					<form class="site-form">
+						<label for="fb4-first-name">First Name:</label>
+						<input type="text" id="fb4-first-name" placeholder="Enter your first name">
+
+						<label for="fb4-middle-initial">Middle Initial:</label>
+						<input type="text" id="fb4-middle-initial" placeholder="M" maxlength="1">
+
+						<label for="fb4-last-name">Last Name:</label>
+						<input type="text" id="fb4-last-name" placeholder="Enter your last name">
+
+						<p class="form-instructions">
+							Customize your FizzBuzz below. Each divisor gets one word - if a number
+							is divisible by more than one, its words are combined. Leave "Default Word"
+							blank if you want numbers that match nothing to show up empty.
+						</p>
+
+						<label for="fb4-total">Count Up To:</label>
+						<input type="number" id="fb4-total" value="125">
+
+						<label for="fb4-divisor1">Divisor 1:</label>
+						<input type="number" id="fb4-divisor1" value="3">
+						<label for="fb4-word1">Word for Divisor 1:</label>
+						<input type="text" id="fb4-word1" value="Suya!">
+
+						<label for="fb4-divisor2">Divisor 2:</label>
+						<input type="number" id="fb4-divisor2" value="5">
+						<label for="fb4-word2">Word for Divisor 2:</label>
+						<input type="text" id="fb4-word2" value="Jollof!">
+
+						<label for="fb4-divisor3">Divisor 3:</label>
+						<input type="number" id="fb4-divisor3" value="7">
+						<label for="fb4-word3">Word for Divisor 3:</label>
+						<input type="text" id="fb4-word3" value="Bang!">
+
+						<label for="fb4-default-word">Default Word (for numbers that match nothing):</label>
+						<input type="text" id="fb4-default-word" value="" placeholder="Leave blank for nothing">
+
+						<button type="button" class="button button__primary" onclick="showFizzBuzz4()">Submit</button>
+					</form>
+					<div class="fizz-scroll" role="region" aria-label="FizzBuzz 4 results" tabindex="0"><ul id="fb4-output" class="fizz-output"></ul></div>
+				</article>
 			</div>
-		</div>
-	</div>
+		</section>
+	</main>
+
 	<!-- Footer -->
-	<div class="footer footer--dark">
+	<div class="footer footer-dark">
 		<div class="container">
 			<div class="footer__inner">
-				<a href="index.html" class="footer__textLogo">Evie theme</a>
+				<a href="#home" class="footer__textLogo">Eko Kitchen</a>
 				<div class="footer__data">
 					<div class="footer__data__item">
 						<div class="footer__row">
-							Created by <a href="https://twitter.com/ninalimpi" target="_blank" class="footer__link">Katerina Limpitsouni</a>
+							Site Designed by <a href="../bamideledesignco.com/index.html" target="_blank" class="footer__link">Bamidele Design Co.</a>
 						</div>
 						<div class="footer__row">
-						Code/design by <a href="https://twitter.com/anges244" target="_blank" class="footer__link">Aggelos Gesoulis</a>
+							<a href="../index.html" class="footer__link">&larr; Back to course site</a>
 						</div>
 					</div>
 					<div class="footer__data__item">
-						<div class="footer__row">Created for <a href="https://undraw.co" target="_blank" class="footer__link">unDraw</a>
+						<div class="footer__row">
+							<a href="https://github.com/olusholabamidele" target="_blank" class="footer__link">GitHub</a>
+						</div>
+						<div class="footer__row">
+							<a href="https://www.freecodecamp.org/olusholabamidele" target="_blank" class="footer__link">freeCodeCamp</a>
+						</div>
+						<div class="footer__row">
+							<a href="https://www.codecademy.com/profiles/olusholabamidele" target="_blank" class="footer__link">Codecademy</a>
 						</div>
 					</div>
 					<div class="footer__data__item">
-					<div class="footer__row">
-						<a href="https://github.com/anges244/evie" target="_blank" class="footer__link">GitHub</a>
+						<div class="footer__row">
+							<a href="https://jsfiddle.net/u/olusholabamidele/fiddles/" target="_blank" class="footer__link">JSFiddle</a>
+						</div>
+						<div class="footer__row">
+							<a href="https://www.linkedin.com/learning/?u=76141674" target="_blank" class="footer__link">LinkedIn Learning</a>
+						</div>
 					</div>
-					<div class="footer__row">
-						<a href="https://twitter.com/undraw_co" target="_blank" class="footer__link">Twitter</a>
-					</div>
-					<div class="footer__row">
-						<a href="https://www.facebook.com/undraw.co/" target="_blank" class="footer__link">Facebook</a>
-					</div>
-					<div class="footer__row">
-						<a href="./additional.html" class="footer__link">MIT license</a>
+					<div class="footer__data__item">
+						<div class="footer__row">
+							Layout: Evie by <a href="https://undraw.co" target="_blank" class="footer__link">unDraw</a>
+						</div>
+						<div class="footer__row">
+							<a href="LICENSE" class="footer__link">MIT license</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<script src='scripts/app.min.js'></script>
+
+	<script src="scripts/app.js"></script>
+	<script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
+
+	<script>
+		// ---------- Introduction Form ----------
+
+		// Add a new blank course row
+		function addCourse() {
+			const coursesContainer = document.getElementById("courses-container");
+			const courseNumber = coursesContainer.querySelectorAll(".course-input").length + 1;
+			const inputId = "course-" + courseNumber;
+
+			const row = document.createElement("div");
+			row.className = "course-row";
+			row.innerHTML =
+				'<label class="visually-hidden" for="' + inputId + '">Course ' + courseNumber + '</label>' +
+				'<input type="text" id="' + inputId + '" class="course-input" required ' +
+				'aria-describedby="course-format-hint" ' +
+				'placeholder="e.g. WEB115 - Web Markup and Scripting">' +
+				'<button type="button" class="button" onclick="removeCourse(this)" aria-label="Remove this course">Remove</button>';
+
+			coursesContainer.appendChild(row);
+		}
+
+		// Remove the course row this button belongs to
+		function removeCourse(button) {
+			button.parentElement.remove();
+		}
+
+		// Turn text with blank-line-separated paragraphs into <p> elements
+		function buildParagraphs(text) {
+			const paragraphs = text.split("\n\n");
+			let html = "";
+
+			for (let i = 0; i < paragraphs.length; i++) {
+				const trimmed = paragraphs[i].trim();
+				if (trimmed !== "") {
+					html += "<p>" + trimmed + "</p>";
+				}
+			}
+
+			return html;
+		}
+
+		// Run when the user clicks the Submit button
+		function updateIntroduction() {
+			// Let the browser check required fields first
+			const form = document.getElementById("intro-form");
+			if (!form.reportValidity()) {
+				return;
+			}
+
+			// Get the values the user typed in
+			const greeting = document.getElementById("greeting").value.trim();
+			const background = document.getElementById("background").value.trim();
+			const aboutMe = document.getElementById("about-me").value.trim();
+			const futureGoals = document.getElementById("future-goals").value.trim();
+			const codingExperience = document.getElementById("coding-experience").value.trim();
+			const notStudying = document.getElementById("not-studying").value.trim();
+
+			// Build the courses list from however many course rows are left
+			const courseInputs = document.querySelectorAll(".course-input");
+			let coursesHTML = "<ol>";
+			for (let i = 0; i < courseInputs.length; i++) {
+				const value = courseInputs[i].value.trim();
+				if (value !== "") {
+					coursesHTML += "<li>" + value + "</li>";
+				}
+			}
+			coursesHTML += "</ol>";
+
+			// Rebuild the output to match the Introduction section's format
+			const output = document.getElementById("intro-output");
+			output.innerHTML =
+				"<p>" + greeting + "</p>" +
+				"<ul>" +
+				"<li><strong>My Background:</strong>" + buildParagraphs(background) + "</li>" +
+				"<li><strong>A Little About Me:</strong>" + buildParagraphs(aboutMe) + "</li>" +
+				"<li><strong>Future Goals:</strong>" + buildParagraphs(futureGoals) + "</li>" +
+				"<li><strong>My Coding Experience and Why I Chose WEB115:</strong>" + buildParagraphs(codingExperience) + "</li>" +
+				"<li><strong>This Semester's Courses:</strong>" + coursesHTML + "</li>" +
+				"<li><strong>When I'm Not Studying:</strong>" + buildParagraphs(notStudying) + "</li>" +
+				"</ul>";
+		}
+
+		// ---------- FizzBuzz (all five versions) ----------
+
+		// Returns true if number is evenly divisible by divisor
+		function checkDivision(number, divisor) {
+			return number % divisor === 0;
+		}
+
+		// Reads the name fields for one FizzBuzz version (prefix is "fb0", "fb1", ...),
+		// updates that version's greeting, and returns the first name
+		function updateGreeting(prefix) {
+			let firstName = document.getElementById(prefix + "-first-name").value.trim();
+			const middleInitial = document.getElementById(prefix + "-middle-initial").value.trim();
+			const lastName = document.getElementById(prefix + "-last-name").value.trim();
+
+			// Use Guest if no first name was entered
+			if (firstName === "") {
+				firstName = "Guest";
+			}
+
+			// Build the full name
+			let fullName = firstName;
+
+			// Add middle initial if entered
+			if (middleInitial !== "") {
+				fullName += " " + middleInitial + ".";
+			}
+
+			// Add last name if entered
+			if (lastName !== "") {
+				fullName += " " + lastName;
+			}
+
+			// Update the greeting
+			document.getElementById(prefix + "-greeting").textContent = "Welcome to Eko Kitchen, " + fullName + "!";
+
+			return firstName;
+		}
+
+		// FizzBuzz 0: count up, with a food word and odd/even for each number
+		const themeWords = [
+			"Jollof Joy",
+			"Suya Sizzle",
+			"Egusi Excellence",
+			"Plantain Power",
+			"Puff Puff",
+			"Chin Chin",
+			"Moin Moin",
+			"Akara Adventure",
+			"Pepper Soup",
+			"Dodo Delight",
+			"Amala Artistry",
+			"Ofada Origins",
+			"Efo Riro",
+			"Zobo Zest",
+			"Fufu Fiesta"
+		];
+
+		function showFizzBuzz0() {
+			const firstName = updateGreeting("fb0");
+
+			// Ask how high to count
+			let limit = prompt("How high do you want to count, " + firstName + "?");
+			limit = Number(limit);
+
+			// Get the output area and clear old results
+			const output = document.getElementById("fb0-output");
+			output.innerHTML = "";
+
+			// Handle missing or invalid input
+			if (!limit || limit < 1) {
+				output.innerHTML = "<li>Please enter a valid number above 0.</li>";
+				return;
+			}
+
+			// Count from 1 to the number the user chose
+			for (let i = 1; i <= limit; i++) {
+				const words = themeWords[(i - 1) % themeWords.length];
+				const parity = i % 2 === 0 ? "even" : "odd";
+
+				const listItem = document.createElement("li");
+				listItem.textContent = i + ") " + words + " - the number is " + parity;
+				output.appendChild(listItem);
+			}
+		}
+
+		// FizzBuzz 1: two divisors, written out with if/else
+		function showFizzBuzz1() {
+			updateGreeting("fb1");
+
+			const maxNumber = 140;
+			const firstDivisor = 3;
+			const secondDivisor = 5;
+			const normalWord = "Yum!";
+			const firstWord = "Suya!";
+			const secondWord = "Jollof!";
+
+			const output = document.getElementById("fb1-output");
+			output.innerHTML = "";
+
+			for (let i = 1; i <= maxNumber; i++) {
+				const divisibleByFirst = i % firstDivisor === 0;
+				const divisibleBySecond = i % secondDivisor === 0;
+
+				let word;
+				if (divisibleByFirst && divisibleBySecond) {
+					word = firstWord + " " + secondWord;
+				} else if (divisibleByFirst) {
+					word = firstWord;
+				} else if (divisibleBySecond) {
+					word = secondWord;
+				} else {
+					word = normalWord;
+				}
+
+				const listItem = document.createElement("li");
+				listItem.textContent = i + ". " + word;
+				output.appendChild(listItem);
+			}
+		}
+
+		// FizzBuzz 2: same as 1, but the divisibility check is its own function
+		function showFizzBuzz2() {
+			updateGreeting("fb2");
+
+			const maxNumber = 140;
+			const firstDivisor = 3;
+			const secondDivisor = 5;
+			const normalWord = "Yum!";
+			const firstWord = "Suya!";
+			const secondWord = "Jollof!";
+
+			const output = document.getElementById("fb2-output");
+			output.innerHTML = "";
+
+			for (let iCounter = 1; iCounter <= maxNumber; iCounter++) {
+				const divisibleByFirst = checkDivision(iCounter, firstDivisor);
+				const divisibleBySecond = checkDivision(iCounter, secondDivisor);
+
+				let word;
+				if (divisibleByFirst && divisibleBySecond) {
+					word = firstWord + " " + secondWord;
+				} else if (divisibleByFirst) {
+					word = firstWord;
+				} else if (divisibleBySecond) {
+					word = secondWord;
+				} else {
+					word = normalWord;
+				}
+
+				const listItem = document.createElement("li");
+				listItem.textContent = iCounter + ". " + word;
+				output.appendChild(listItem);
+			}
+		}
+
+		// FizzBuzz 3: any number of divisors, kept in a list
+		function showFizzBuzz3() {
+			updateGreeting("fb3");
+
+			const maxNumber = 140;
+			const normalWord = "Yum!";
+
+			// Add more entries here (e.g. { divisor: 11, word: "Zobo!" })
+			// without touching the loop below.
+			const fizzWords = [
+				{ divisor: 3, word: "Suya!" },
+				{ divisor: 5, word: "Jollof!" },
+				{ divisor: 7, word: "Bang!" }
+			];
+
+			const output = document.getElementById("fb3-output");
+			output.innerHTML = "";
+
+			for (let iCounter = 1; iCounter <= maxNumber; iCounter++) {
+				// Check every divisor and build up the matching words
+				let word = "";
+				for (let j = 0; j < fizzWords.length; j++) {
+					if (checkDivision(iCounter, fizzWords[j].divisor)) {
+						word += fizzWords[j].word + " ";
+					}
+				}
+
+				// If no divisor matched, use the normal word instead
+				word = word === "" ? normalWord : word.trim();
+
+				const listItem = document.createElement("li");
+				listItem.textContent = iCounter + ". " + word;
+				output.appendChild(listItem);
+			}
+		}
+
+		// FizzBuzz 4: everything comes from the form
+		function showFizzBuzz4() {
+			updateGreeting("fb4");
+
+			// Get the FizzBuzz settings the user typed in
+			const total = Number(document.getElementById("fb4-total").value);
+			const defaultWord = document.getElementById("fb4-default-word").value.trim();
+
+			const fizzWords = [
+				{ divisor: Number(document.getElementById("fb4-divisor1").value), word: document.getElementById("fb4-word1").value.trim() },
+				{ divisor: Number(document.getElementById("fb4-divisor2").value), word: document.getElementById("fb4-word2").value.trim() },
+				{ divisor: Number(document.getElementById("fb4-divisor3").value), word: document.getElementById("fb4-word3").value.trim() }
+			];
+
+			const output = document.getElementById("fb4-output");
+			output.innerHTML = "";
+
+			for (let iCounter = 1; iCounter <= total; iCounter++) {
+				// Check every divisor and collect the matching words
+				const matches = [];
+				for (let j = 0; j < fizzWords.length; j++) {
+					if (checkDivision(iCounter, fizzWords[j].divisor)) {
+						matches.push(fizzWords[j].word);
+					}
+				}
+
+				// If no divisor matched, use the default word instead (can be blank)
+				const word = matches.length > 0 ? matches.join(", ") : defaultWord;
+
+				const listItem = document.createElement("li");
+				listItem.textContent = iCounter + ". " + word;
+				output.appendChild(listItem);
+			}
+		}
+	</script>
 </body>
+
 </html>
