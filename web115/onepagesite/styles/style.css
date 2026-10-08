@@ -1643,3 +1643,6 @@ body {
 
 .fizz-output li {
   margin-bottom: 4px; }
+
+.footer__data {
+  gap: 20px; }
